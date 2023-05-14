@@ -1,0 +1,13 @@
+[31m[1mCMake Error[0m at /home/sjchang/catkin_ws/src/darknet_ros/darknet_ros_msgs/CMakeLists.txt:3 (project):
+  The CMAKE_C_COMPILER:
+
+    /usr/bin/gcc-6
+
+  is not a full path to an existing compiler tool.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+
+make: *** [Makefile:908: cmake_check_build_system] Error 1

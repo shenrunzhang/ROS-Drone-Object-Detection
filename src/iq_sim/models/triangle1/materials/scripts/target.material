@@ -1,0 +1,15 @@
+material triangle1
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      alpha_rejection greater_equal 128
+      texture_unit
+      {
+        texture triangle1.png
+      }
+    }
+  }
+}

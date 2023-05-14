@@ -1,0 +1,15 @@
+material circle8
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      alpha_rejection greater_equal 128
+      texture_unit
+      {
+        texture circle8.png
+      }
+    }
+  }
+}

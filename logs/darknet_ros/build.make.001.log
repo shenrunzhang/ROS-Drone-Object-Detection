@@ -1,0 +1,6 @@
+[35m[1mScanning dependencies of target darknet_ros_msgs_generate_messages_cpp[0m
+[  0%] Built target darknet_ros_msgs_generate_messages_cpp
+[  1%] [34m[1mBuilding NVCC (Device) object CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_maxpool_layer_kernels.cu.o[0m
+[  2%] [34m[1mBuilding NVCC (Device) object CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_crop_layer_kernels.cu.o[0m
+[  3%] [34m[1mBuilding NVCC (Device) object CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_avgpool_layer_kernels.cu.o[0m
+[  5%] [34m[1mBuilding NVCC (Device) object CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_activation_kernels.cu.o[0m

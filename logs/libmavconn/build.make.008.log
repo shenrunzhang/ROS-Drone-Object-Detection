@@ -1,0 +1,8 @@
+[35m[1mScanning dependencies of target mavconn[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/mavconn.dir/src/interface.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/mavconn.dir/catkin_generated/src/mavlink_helpers.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/mavconn.dir/src/serial.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/mavconn.dir/src/udp.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/mavconn.dir/src/tcp.cpp.o[0m
+[ 85%] [32m[1mLinking CXX shared library /home/sjchang/catkin_ws/devel/.private/libmavconn/lib/libmavconn.so[0m
+[100%] Built target mavconn

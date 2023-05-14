@@ -1,0 +1,10 @@
+[ 12%] [32m[1mLinking CXX executable /home/sjchang/catkin_ws/devel/.private/iq_gnc/lib/iq_gnc/square[0m
+[ 25%] Built target square
+[35m[1mScanning dependencies of target sub[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/sub.dir/src/sub.cpp.o[0m
+[ 50%] [32m[1mLinking CXX executable /home/sjchang/catkin_ws/devel/.private/iq_gnc/lib/iq_gnc/sub[0m
+[ 50%] Built target sub
+[ 62%] [32m[1mLinking CXX executable /home/sjchang/catkin_ws/devel/.private/iq_gnc/lib/iq_gnc/set_wp[0m
+[ 75%] Built target set_wp
+[ 87%] [32m[1mLinking CXX executable /home/sjchang/catkin_ws/devel/.private/iq_gnc/lib/iq_gnc/gnc_example[0m
+[100%] Built target gnc_example

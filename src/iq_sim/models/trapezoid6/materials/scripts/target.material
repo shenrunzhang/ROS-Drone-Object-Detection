@@ -1,0 +1,15 @@
+material trapezoid6
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      alpha_rejection greater_equal 128
+      texture_unit
+      {
+        texture trapezoid6.png
+      }
+    }
+  }
+}

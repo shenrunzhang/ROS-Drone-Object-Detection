@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sjchang/catkin_ws/build/libmavconn/devel/setup.sh

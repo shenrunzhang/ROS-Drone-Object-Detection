@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -std=c++11 -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -fPIC -fpermissive  -O3 -DNDEBUG  -shared -Wl,-soname,libgtest.so -o ../lib/libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -lSM -lICE -lX11 -lXext -lpthread 

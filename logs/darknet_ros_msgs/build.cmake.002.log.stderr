@@ -1,0 +1,33 @@
+CMake Warning (dev) at CMakeLists.txt:3 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+You have changed variables that require your cache to be deleted.
+Configure will be re-run and you may have to reset some variables.
+The following variables have changed:
+CMAKE_C_COMPILER= /usr/bin/gcc-6
+CMAKE_C_COMPILER= /usr/bin/gcc-6
+CMAKE_C_COMPILER= /usr/bin/gcc-6
+CMAKE_C_COMPILER= /usr/bin/gcc-6
+
+[31m[1mCMake Error[0m at /home/sjchang/catkin_ws/src/darknet_ros/darknet_ros_msgs/CMakeLists.txt:3 (project):
+  The CMAKE_C_COMPILER:
+
+    /usr/bin/gcc-6
+
+  is not a full path to an existing compiler tool.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+

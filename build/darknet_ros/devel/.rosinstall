@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sjchang/catkin_ws/build/darknet_ros/devel/setup.sh

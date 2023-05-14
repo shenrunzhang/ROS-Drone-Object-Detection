@@ -1,0 +1,6 @@
+[35m[1mScanning dependencies of target square[0m
+[ 33%] Built target set_wp
+[ 50%] [32mBuilding CXX object CMakeFiles/square.dir/src/square.cpp.o[0m
+[ 83%] Built target gnc_example
+[100%] [32m[1mLinking CXX executable /home/sjchang/catkin_ws/devel/.private/iq_gnc/lib/iq_gnc/square[0m
+[100%] Built target square

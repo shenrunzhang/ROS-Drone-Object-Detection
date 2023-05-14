@@ -1,0 +1,9 @@
+nvcc fatal   : Unsupported gpu architecture 'compute_30'
+CMake Error at darknet_ros_lib_generated_maxpool_layer_kernels.cu.o.Release.cmake:220 (message):
+  Error generating
+  /home/sjchang/catkin_ws/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/./darknet_ros_lib_generated_maxpool_layer_kernels.cu.o
+
+
+make[2]: *** [CMakeFiles/darknet_ros_lib.dir/build.make:128: CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_maxpool_layer_kernels.cu.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:783: CMakeFiles/darknet_ros_lib.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,8 @@
+[35m[1mScanning dependencies of target take_off[0m
+[ 20%] Built target sub
+[ 40%] Built target gnc_example
+[ 60%] Built target set_wp
+[ 80%] Built target square
+[ 90%] [32mBuilding CXX object CMakeFiles/take_off.dir/src/takeoff.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/sjchang/catkin_ws/devel/.private/iq_gnc/lib/iq_gnc/take_off[0m
+[100%] Built target take_off

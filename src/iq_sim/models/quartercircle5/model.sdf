@@ -1,0 +1,31 @@
+
+                    <?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="quartercircle5">
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.01</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+                <uri>model://quartercircle5/materials/scripts</uri>
+                <uri>model://quartercircle5/materials/textures</uri>
+                <name>quartercircle5</name>
+              </script>
+          </material>
+        </visual>
+      </link>
+      
+    </model>
+</sdf>

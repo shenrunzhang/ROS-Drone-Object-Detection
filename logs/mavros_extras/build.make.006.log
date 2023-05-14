@@ -1,0 +1,103 @@
+[  5%] Built target servo_state_publisher
+[  5%] Built target actionlib_msgs_generate_messages_nodejs
+[  5%] Built target visualization_msgs_generate_messages_py
+[  5%] Built target visualization_msgs_generate_messages_nodejs
+[  5%] Built target visualization_msgs_generate_messages_lisp
+[  5%] Built target tf_generate_messages_nodejs
+[  5%] Built target tf_generate_messages_cpp
+[  5%] Built target trajectory_msgs_generate_messages_nodejs
+[  5%] Built target trajectory_msgs_generate_messages_lisp
+[  5%] Built target trajectory_msgs_generate_messages_cpp
+[  5%] Built target tf2_msgs_generate_messages_nodejs
+[  5%] Built target tf2_msgs_generate_messages_lisp
+[  5%] Built target tf2_msgs_generate_messages_cpp
+[  5%] Built target actionlib_generate_messages_nodejs
+[  5%] Built target actionlib_generate_messages_cpp
+[  5%] Built target tf_generate_messages_eus
+[  5%] Built target rosgraph_msgs_generate_messages_lisp
+[  5%] Built target actionlib_msgs_generate_messages_eus
+[  5%] Built target visualization_msgs_generate_messages_eus
+[  5%] Built target nav_msgs_generate_messages_cpp
+[  5%] Built target trajectory_msgs_generate_messages_eus
+[  5%] Built target roscpp_generate_messages_py
+[  5%] Built target std_msgs_generate_messages_nodejs
+[  5%] Built target geometry_msgs_generate_messages_eus
+[  5%] Built target actionlib_generate_messages_py
+[  5%] Built target diagnostic_msgs_generate_messages_lisp
+[  5%] Built target nav_msgs_generate_messages_eus
+[  5%] Built target std_msgs_generate_messages_cpp
+[  5%] Built target diagnostic_msgs_generate_messages_eus
+[  5%] Built target std_msgs_generate_messages_py
+[  5%] Built target roscpp_generate_messages_cpp
+[  5%] Built target geometry_msgs_generate_messages_py
+[  5%] Built target tf2_msgs_generate_messages_eus
+[  5%] Built target sensor_msgs_generate_messages_py
+[  5%] Built target tf_generate_messages_lisp
+[  5%] Built target nav_msgs_generate_messages_py
+[  5%] Built target actionlib_generate_messages_lisp
+[  5%] Built target roscpp_generate_messages_lisp
+[  5%] Built target mavros_msgs_generate_messages_eus
+[  5%] Built target diagnostic_msgs_generate_messages_cpp
+[  5%] Built target rosgraph_msgs_generate_messages_py
+[  5%] Built target geometry_msgs_generate_messages_cpp
+[  5%] Built target geometry_msgs_generate_messages_nodejs
+[  5%] Built target trajectory_msgs_generate_messages_py
+[  5%] Built target actionlib_generate_messages_eus
+[  5%] Built target rosgraph_msgs_generate_messages_cpp
+[  5%] Built target diagnostic_msgs_generate_messages_nodejs
+[  5%] Built target uuid_msgs_generate_messages_lisp
+[  5%] Built target roscpp_generate_messages_nodejs
+[  5%] Built target geometry_msgs_generate_messages_lisp
+[  5%] Built target mavros_msgs_generate_messages_py
+[  5%] Built target std_msgs_generate_messages_lisp
+[  5%] Built target roscpp_generate_messages_eus
+[  5%] Built target uuid_msgs_generate_messages_eus
+[  5%] Built target uuid_msgs_generate_messages_cpp
+[  5%] Built target rosgraph_msgs_generate_messages_nodejs
+[  5%] Built target geographic_msgs_generate_messages_cpp
+[  5%] Built target geographic_msgs_generate_messages_eus
+[  5%] Built target rosgraph_msgs_generate_messages_eus
+[  5%] Built target geographic_msgs_generate_messages_lisp
+[  5%] Built target nav_msgs_generate_messages_nodejs
+[  5%] Built target diagnostic_msgs_generate_messages_py
+[  5%] Built target sensor_msgs_generate_messages_cpp
+[  5%] Built target geographic_msgs_generate_messages_nodejs
+[  5%] Built target geographic_msgs_generate_messages_py
+[  5%] Built target visualization_msgs_generate_messages_cpp
+[  5%] Built target sensor_msgs_generate_messages_eus
+[  5%] Built target sensor_msgs_generate_messages_lisp
+[  5%] Built target uuid_msgs_generate_messages_nodejs
+[  5%] Built target uuid_msgs_generate_messages_py
+[  5%] Built target tf2_msgs_generate_messages_py
+[  5%] Built target mavros_msgs_generate_messages_cpp
+[  5%] Built target actionlib_msgs_generate_messages_py
+[  5%] Built target mavros_msgs_generate_messages_lisp
+[  5%] Built target mavros_msgs_generate_messages_nodejs
+[  5%] Built target sensor_msgs_generate_messages_nodejs
+[  5%] Built target nav_msgs_generate_messages_lisp
+[  5%] Built target actionlib_msgs_generate_messages_cpp
+[  5%] Built target tf_generate_messages_py
+[  5%] Built target actionlib_msgs_generate_messages_lisp
+[  5%] Built target std_msgs_generate_messages_eus
+[ 10%] Built target visualization
+[ 13%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/gps_status.cpp.o[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/landing_target.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/log_transfer.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/mag_calibration_status.cpp.o[0m
+[ 24%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/mocap_pose_estimate.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/mount_control.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/obstacle_distance.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/odom.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/play_tune.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/px4flow.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/rangefinder.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/terrain.cpp.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/trajectory.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/tunnel.cpp.o[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/vibration.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/vision_pose_estimate.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/vision_speed_estimate.cpp.o[0m
+[ 59%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/wheel_odometry.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/guided_target.cpp.o[0m
+[ 64%] [32m[1mLinking CXX shared library /home/sjchang/catkin_ws/devel/.private/mavros_extras/lib/libmavros_extras.so[0m
+[100%] Built target mavros_extras
