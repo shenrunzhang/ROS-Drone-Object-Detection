@@ -62,25 +62,42 @@ def main():
     # Specify control loop rate. We recommend a low frequency to not over load the FCU with messages. Too many messages will cause the drone to be sluggish.
     rate = rospy.Rate(3)
     
-    # Specify some waypoints
-    goals = [[0, 0, 20, 0], [0, 20, 20, 0], [0, 40, 20, 0]]
+    # How many pictures to take:
+    n_pics = 4
+
+    # Declare length of the runway in meters 
+    len_runway = 40
+
+    # Declare flight altitude
+    height = 20
+
+    # Create waypoints
+    goals = []
+
+    for y in range(0, len_runway, len_runway // (n_pics + 2)):
+        goals.append([0, y, height, 0])
+    
     i = 0
-    
-    
+
+    text = ""
+
     while i < len(goals):
         drone.set_destination(
             x=goals[i][0], y=goals[i][1], z=goals[i][2], psi=goals[i][3])
         rate.sleep()
+
         
-        text += str(drone.get_current_location()) + "\n"
-        
-        if i == 1: 
-            img = capture_image()
-            image_queue.append(img)
-            
         if drone.check_waypoint_reached():
+            # Record locations
+            text += str(drone.get_current_location()) + "\n"
+            
+            if i != 0 and i != len(goals) - 1:
+                # Take pictures at middle waypoints
+                img = capture_image()
+                image_queue.append(img)
+
             i += 1
-    
+
             
     # Land after all waypoints is reached.
     drone.land()
@@ -88,7 +105,6 @@ def main():
     
     
     # Saves images and logs targets
-    text = ""
     
     n_targets = len(image_queue)
     
@@ -96,6 +112,8 @@ def main():
         text += "-" * 20 + " Image " + str(i) + " " + "-" * 20 + "\n"
         
         img = image_queue.popleft()
+
+        cv2.imwrite('pic%s.jpg'%i, img)
         
         target_list = get_target_list(img)
         
