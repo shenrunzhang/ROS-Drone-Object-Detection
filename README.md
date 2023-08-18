@@ -100,13 +100,6 @@ aerial_image_processed_0.jpg
 </div>
 
 
-Replace "image1.jpg", "image2.jpg", etc., with the actual paths or URLs of your images.
-
-This code uses a combination of flex layout and HTML to display five images in two rows with captions beneath them. The flex-wrap: wrap property allows images to wrap to a new row when the container width is limited, and the justify-content: space-between property ensures even spacing between the images. Images are set to a width of 48% to fit two in a row, except for the last image, which takes up the full width. The text-align: center property centers the images and captions.
-
-Please remember that different Markdown renderers might interpret HTML and CSS slightly differently, so it's recommended to preview your README on GitHub after making these changes.
-
-
 
 
 
