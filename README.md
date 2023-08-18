@@ -1,9 +1,10 @@
 # ROS Drone Object Detection
-An implementation of a vision pipeline for target detection and classification, incorporating a custom-trained CNN model and Holistically-Nested Edge Detection (HED) deep learning model. A working demonstration is shown with ROS and Gazebo. 
+An implementation of a vision pipeline for target detection and classification, incorporating a custom-trained CNN model and Holistically-Nested Edge Detection (HED) deep learning model. A working demonstration is shown with ROS and Gazebo. Skip to [Demonstration](#demonstration) to see the pipeline working.
 
 ## Table of Contents
 
 - [About](#about)
+- [How It Works](#how-it-works)
 - [Demonstration](#demonstration)
 - [Features](#features)
 - [Installation](#installation)
@@ -20,10 +21,22 @@ This project was developed for the Object Detection, Classification, and Localiz
 </p>
 Due to hardware constraints, it was hard to capture letters on the target clearly, so we decided to focus on color + shape classification.
 
+## How It Works
+Hardware Specs/Constraints
+- Camera: Arducam 64MP Hawkeye Motorized Focus Camera Module
+- Resolution: 9152 pixels by 6944 pixels, 64MP
+- Pixel Size: 0.8 µm x 0.8 µm
+- Shutter Speed: Adjustable
+
+Pipeline overview:
+<div style="display:flex;">
+    <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/pipeline%20diagram.svg" alt="Pipeline Flowchart" style=" vertical-align: top;">
+    
+</div>
+
 The architecture of our custom-trained CNN model for shape classification is as follows:
-<p align="center">
-    <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png" alt="model architecture">
-</p>
+![model architecture](https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png)
+
 
 ## Demonstration
 ### Install
@@ -62,3 +75,39 @@ The YouTube link below brings you to a video of the script running:
     <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/thumbnail.PNG" alt="Your Image Alt Text" width=70% height=70%>
   </a>
 </p>
+
+aerial_image_processed_0.jpg
+<div align="center">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_0.jpg" alt="Image 1" width="48%">
+  <p>Image 1</p>
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_1.jpg" alt="Image 2" width="48%">
+  <br>
+  <p>Image 2</p>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_2.jpg" alt="Image 3" width="48%">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_3.jpg" alt="Image 4" width="48%">
+  <br>
+  <p>Image 3</p>
+  <p>Image 4</p>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_4.jpg" alt="Image 5" width="100%">
+  <br>
+  <p>Image 5</p>
+</div>
+
+
+Replace "image1.jpg", "image2.jpg", etc., with the actual paths or URLs of your images.
+
+This code uses a combination of flex layout and HTML to display five images in two rows with captions beneath them. The flex-wrap: wrap property allows images to wrap to a new row when the container width is limited, and the justify-content: space-between property ensures even spacing between the images. Images are set to a width of 48% to fit two in a row, except for the last image, which takes up the full width. The text-align: center property centers the images and captions.
+
+Please remember that different Markdown renderers might interpret HTML and CSS slightly differently, so it's recommended to preview your README on GitHub after making these changes.
+
+
+
+
+
+
