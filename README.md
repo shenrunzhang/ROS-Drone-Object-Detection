@@ -1,5 +1,5 @@
 # ROS Drone Object Detection
-An implementation of a vision pipeline for target detection and classification, incorporating a custom-trained CNN model and Holistically-Nested Edge Detection (HED) deep learning model. A working demonstration is shown with ROS and Gazebo. Skip to [Demonstration](#demonstration) to see the pipeline working.
+An implementation of a vision pipeline for target detection and classification, incorporating a custom-trained CNN model and Holistically-Nested Edge Detection (HED) deep learning model. A working demonstration is shown with ROS and Gazebo. Skip to [Demonstration](#video) to see the pipeline working.
 
 ## Table of Contents
 
