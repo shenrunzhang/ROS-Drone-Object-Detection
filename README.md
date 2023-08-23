@@ -6,12 +6,10 @@ An implementation of a vision pipeline for target detection and classification, 
 - [About](#about)
 - [How It Works](#how-it-works)
 - [Demonstration](#demonstration)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Video](#video)
+    - [Results](#results)
 ## About
 This project was developed for the Object Detection, Classification, and Localization component of the 2023 SUAS drone competition. The competition drone flies over a section of runway and must detect and classify various targets on the ground by their shape, color, and the letter printed at the center of each target. A series of specific targets with their descriptions are given, and the drone is required to know where they are. 
 <p align="center">
@@ -71,6 +69,7 @@ $ ./startsitl.sh                         # Run the shell script
 $ roslaunch iq_sim apm.launch            # Start MavROS
 $ rosrun iq_gnc movement.py              # Start the demo script
 ```
+### Usage
 To just use the pipeline, you must first load the target classification model and Holistically-Nested Edge Detection model (HED). `load_models` outputs the shape classification model and HED.
 ```
 from modules import pipeline
@@ -91,7 +90,7 @@ The demo script takes the drone over a 40 m stretch of runway, on which targets 
 
 ![Flight Plan](https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/flight%20plan.PNG)
 
-### YouTube Link
+### Video
 <p align="center">
   <a href="https://www.youtube.com/watch?v=liCptHpHUXY" target="_blank">
     <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/thumbnail.PNG" alt="Your Image Alt Text" width=70% height=90%>
