@@ -71,8 +71,23 @@ $ ./startsitl.sh                         # Run the shell script
 $ roslaunch iq_sim apm.launch            # Start MavROS
 $ rosrun iq_gnc movement.py              # Start the demo script
 ```
+To just use the pipeline, you must first load the target classification model and Holistically-Nested Edge Detection model (HED). `load_models` outputs the shape classification model and HED.
+```
+from modules import pipeline
+
+classification_model_path = "modules/shape_classification_model_gazebo.h5" # Load shape classification model
+prototxt_path = "modules/edgeFinder/deploy.prototxt" # Load edge detection
+caffemodel_path = "modules/edgeFinder/hed_pretrained_bsds.caffemodel" # Load edge detection
+
+prob_model, edge_detection_model = load_models(classification_model_path, prototxt_path, caffemodel_path) # Return models
+```
+Then pass in an aerial image with the shape and edge models to get a list of targets with detected location, shape and color attributes
+```
+target_list = get_target_list(aerial_image, prob_model, edge_detection_model)
+```
+
 ### Demo Script Flight Plan
-The demo script takes the drone over a 40 m stretch of runway, on which targets have been placed of the specified colors and shapes. The generation of gazebo targets is automated in the script `\src\iq_gnc\scripts\modules`. Several waypoints have been placed to help guide the drone as it takes pictures of the targets at regular intervals.
+The demo script takes the drone over a 40 m stretch of runway, on which targets have been placed of the specified colors and shapes. The generation of gazebo targets is automated in the script `\src\iq_gnc\scripts\modules\geolocation.py`. Several waypoints have been placed to help guide the drone as it takes pictures of the targets at regular intervals.
 
 ![Flight Plan](https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/flight%20plan.PNG)
 
