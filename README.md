@@ -38,6 +38,15 @@ The architecture of our custom-trained CNN model for shape classification is as 
 ![model architecture](https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png)
 
 
+<div style="width: 50%; overflow: scroll;">
+  <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png" style="width: 100%; max-width:; height: auto;">
+</div>
+
+<figure>
+  <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png" alt="Horizontally Long Image">
+  <figcaption>Horizontally Long Image</figcaption>
+</figure>
+
 ## Demonstration
 ### Install
 Install [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu). Since ROS only runs on Linux, Windows users should install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) before installing ROS.
