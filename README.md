@@ -79,39 +79,39 @@ The demo script takes the drone over a 40 m stretch of runway, on which targets 
 ### YouTube Link
 <p align="center">
   <a href="https://www.youtube.com/watch?v=liCptHpHUXY" target="_blank">
-    <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/thumbnail.PNG" alt="Your Image Alt Text" width=70% height=70%>
+    <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/thumbnail.PNG" alt="Your Image Alt Text" width=70% height=90%>
   </a>
 </p>
 
 ### Results
 For each target detected, its global position, shape, and color are shown. Note that the drone starts at x=0, y=0.
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_0.jpg" alt="Image 1" width="70%">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_0.jpg" alt="Image 1" width="90%">
     <br>
     <p>Image 1. Drone position: x = -0.19 m, y = 6.05 m</p>
 
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_1.jpg" alt="Image 2" width="70%">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_1.jpg" alt="Image 2" width="90%">
   <br>
   <p>Image 2. Drone position: x = -0.42 m, y = 12.04 m</p>
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_2.jpg" alt="Image 3" width="70%">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_2.jpg" alt="Image 3" width="90%">
   <br>
   <p>Image 3. Drone position: x = -0.65 m, y = 18.04 m</p>
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_3.jpg" alt="Image 4" width="70%">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_3.jpg" alt="Image 4" width="90%">
   <br>
   <p>Image 4. Drone position: x = -0.86 m, y = 24.01 m</p>
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_4.jpg" alt="Image 5" width="70%">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_4.jpg" alt="Image 5" width="90%">
   <br>
   <p>Image 5. Drone position: x = -1.08 m, y = 29.97 m</p>
 </div>
