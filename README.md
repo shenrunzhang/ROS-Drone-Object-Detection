@@ -66,38 +66,53 @@ To run the demonstration, copy and execute each line in a new terminal:
 $ roslaunch iq_sim runway.launch         # Opens Gazebo world
 $ ./startsitl.sh                         # Run the shell script
 $ roslaunch iq_sim apm.launch            # Start MavROS
-$ rosrun iq_gnc movement.py              # Start the drone
+$ rosrun iq_gnc movement.py              # Start the demo script
 ```
+### Demo Script Flight Plan
+The demo script takes the drone over a 40 m stretch of runway, on which targets have been placed of the specified colors and shapes. The generation of gazebo targets is automated in the script `\src\iq_gnc\scripts\modules`. Several waypoints have been placed to help guide the drone as it takes pictures of the targets at regular intervals.
 
-The YouTube link below brings you to a video of the script running:
+![Flight Plan](https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/flight%20plan.PNG)
+
+### YouTube Link
 <p align="center">
   <a href="https://www.youtube.com/watch?v=liCptHpHUXY" target="_blank">
     <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/thumbnail.PNG" alt="Your Image Alt Text" width=70% height=70%>
   </a>
 </p>
 
-aerial_image_processed_0.jpg
+### Results
+For each target detected, its global position, shape, and color are shown. Note that the drone starts at x=0, y=0.
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_0.jpg" alt="Image 1" width="48%">
-  <p>Image 1</p>
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_1.jpg" alt="Image 2" width="48%">
-  <br>
-  <p>Image 2</p>
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_0.jpg" alt="Image 1" width="70%">
+    <br>
+    <p>Image 1. Drone position: x = -0.19 m, y = 6.05 m</p>
+
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_2.jpg" alt="Image 3" width="48%">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_3.jpg" alt="Image 4" width="48%">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_1.jpg" alt="Image 2" width="70%">
   <br>
-  <p>Image 3</p>
-  <p>Image 4</p>
+  <p>Image 2. Drone position: x = -0.42 m, y = 12.04 m</p>
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_4.jpg" alt="Image 5" width="100%">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_2.jpg" alt="Image 3" width="70%">
   <br>
-  <p>Image 5</p>
+  <p>Image 3. Drone position: x = -0.65 m, y = 18.04 m</p>
 </div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_3.jpg" alt="Image 4" width="70%">
+  <br>
+  <p>Image 4. Drone position: x = -0.86 m, y = 24.01 m</p>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/shenrunzhang/ROS-Drone-Object-Detection/master/media/aerial_image_processed_4.jpg" alt="Image 5" width="70%">
+  <br>
+  <p>Image 5. Drone position: x = -1.08 m, y = 29.97 m</p>
+</div>
+
 
 
 
