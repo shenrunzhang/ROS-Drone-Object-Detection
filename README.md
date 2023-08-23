@@ -35,17 +35,11 @@ Pipeline overview:
 </div>
 
 The architecture of our custom-trained CNN model for shape classification is as follows:
-![model architecture](https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png)
 
-
-<div style="width: 50%; overflow: scroll;">
-  <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png" style="width: 100%; max-width:; height: auto;">
+<div style="width: 100%; overflow: auto;">
+  <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png" style="max-width: 300%; height: auto;">
 </div>
 
-<figure>
-  <img src="https://github.com/shenrunzhang/ROS-Drone-Object-Detection/blob/master/media/model_arch_diagram.png" alt="Horizontally Long Image">
-  <figcaption>Horizontally Long Image</figcaption>
-</figure>
 
 ## Demonstration
 ### Install
