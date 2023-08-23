@@ -12,6 +12,7 @@ from modules.edgeFinder import inference
 from modules.classify_targets import find_targets
 from modules.target import Target
 from modules.color import classify_color
+from modules.geolocation import pixel_to_loc
 
 
 def get_best_img(lowerx, upperx, lowery, uppery, maxx, maxy):
@@ -34,12 +35,32 @@ def get_best_img(lowerx, upperx, lowery, uppery, maxx, maxy):
         newlowery = max(lowery - (128 - height) // 2, 0)
         newuppery = min(uppery + (128 - height) // 2, maxy)
     if (newupperx - newlowerx > 128):
-        print("edge case fuck")
+        print("edge case ")
     if (newuppery - newlowery > 128):
-        print("edge case fuck")
-    print("COORDINATES JUST DROPPED")
+        print("edge case ")
+    print("COORDINATES")
     print(str(newlowerx) + " , " + str(newupperx) + " , " + str(newlowery) + " , " + str(newupperx))
     return newlowerx, newupperx, newlowery, newuppery
+
+def filter_targets(target_list, displacement_threshold=1):
+    lst = []
+    
+    for target in target_list:
+        pos1 = target.get_real_pos()
+        unique = True
+        for target_2 in lst:
+            pos2 = target_2.get_real_pos()
+            displacement = ((pos1[0] - pos2[0]) ** 2 + (pos1[1] - pos2[1]) ** 2) ** 0.5 
+            if displacement < displacement_threshold:
+                unique = False
+                break
+        
+        if unique:
+            lst.append(target)
+            
+    return lst
+                
+        
 """
 Pipeline:
 Image -> Detect Targets -> Classify Shape -> Classify Color -> 
@@ -73,29 +94,44 @@ For each tile in tiles:
         guesses = [class_names[np.argmax(prediction)] for prediction in predictions]
 
 """
-def get_target_list(image)-> list:
+def load_models(model_path: str) -> any:
     '''
-    input: aerial image
-    output: list of target objects
+    Keeps the classfication and HED model loaded, to be run before get_target_list
+    input: 
+    model_path - path to the classification model
+    output:
+    classification model 
+    HED model
     '''
     
     # load model
-    model = tf.keras.models.load_model('shapemodel.h5')
+    model = tf.keras.models.load_model(model_path)
     probability_model = tf.keras.Sequential([model, tf.keras.layers.Softmax()])
-
-    # List of class names for model
-    class_names = ['circle', 'cross', 'heptagon', 'hexagon', 'octagon', 'pentagon', 
-               'quartercircle', 'rectangle', 'semicircle', 'square', 'star', 'trapezoid', 'triangle']
-
     
     # Holistically nested Edge Detection stuff
-    prototxt_path = "modules/edgeFinder/deploy.prototxt"
-    caffemodel_path = "modules/edgeFinder/hed_pretrained_bsds.caffemodel"
+    prototxt_path = "vision/modules/edgeFinder/deploy.prototxt"
+    caffemodel_path = "vision/modules/edgeFinder/hed_pretrained_bsds.caffemodel"
 
     # Load HED model (doing this outside inference.predict() keeps model loaded)
     net = cv2.dnn.readNetFromCaffe(prototxt_path, caffemodel_path)
     cv2.dnn_registerLayer('Crop', inference.CropLayer)
 
+    
+    return probability_model, net
+    
+def get_target_list(image, probability_model, edge_detection_model)-> list:
+    '''
+    input: aerial image, classification model, HED model
+    output: list of target objects
+    '''
+    # TODO: Account for last tile
+    
+
+    # List of class names for model
+    class_names = ['circle', 'cross', 'heptagon', 'hexagon', 'octagon', 'pentagon', 
+               'quartercircle', 'rectangle', 'semicircle', 'square', 'star', 'trapezoid', 'triangle']
+
+    # print("flag D")
     global_height = image.shape[0]
     global_width = image.shape[1]
     
@@ -117,17 +153,16 @@ def get_target_list(image)-> list:
             tile = image[lowerR:upperR,lowerC:upperC]
             
             # inference result returns a grayscale image
-            pred = inference.predict(tile, net, width=tile_width, height=tile_height)
+            pred = inference.predict(tile, edge_detection_model, width=tile_width, height=tile_height)
             
             (thresh, pred) = cv2.threshold(pred, 50, 255, cv2.THRESH_BINARY)
-
+            
             # Finds targets
             target_lst = find_targets(pred)
             i = 0
             for target in target_lst:
                 cv2.imwrite("targ" + str(i) + ".jpg", target.get_image())
                 i += 1
-
 
             # Draws bboxes onto original image
             for index, target in enumerate(target_lst):
@@ -152,16 +187,108 @@ def get_target_list(image)-> list:
                 #  use bounding box for color 
                 target_color = classify_color(target_tile).split(':')[0]
                 global_target_list.append(Target(target_tile, x + w // 2, y + h // 2, (x, y, w, h), target_shape, target_color))
-    
+        
+            
     return global_target_list
     
         
 if __name__ == "__main__":
     
-    target_list = get_target_list(r"C:\Users\Shen\Documents\GitHub\RiceUAV\croppedtest2.jpg")
+    classification_model_path = 'shape_classification_model_gazebo.h5'
+    
+    # Load aerial images pic0.jpg - pic4.jpg
+    aerial_images = []
+    # Drone locations in real world coordinates when each picture was taken
+    drone_pos = [[-0.19, 6.05], [-0.42, 12.04], [-0.65, 18.04], [-0.86, 24.01], [-1.08, 29.97]]
 
-    for i in range(len(target_list)):
-        targ = target_list[i]
-        # ensures a unique filename
-        filename = "target_" + str(i) + targ.get_shape() + targ.get_color() + ".jpg"
-        cv2.imwrite(filename, targ.get_image())
+    for i in range(5):
+        img = cv2.imread(r"C:\Users\Shen\Documents\GitHub\RiceUAV\pic{}.jpg".format(i))
+        aerial_images.append([img, drone_pos[i][0], drone_pos[i][1]])
+        
+    # load the classification model
+    
+    prob_model, edge_detection_model = load_models(classification_model_path)
+
+    # iterate through the images and classify all the targets
+    global_target_list = []
+    
+    for index in range(len(aerial_images)):
+        print("Working on aerial image {}".format(index))
+        aerial_image, drone_x, drone_y = aerial_images[index]
+        target_list = get_target_list(aerial_image, prob_model, edge_detection_model)
+        print("number of targets: ",len(target_list))        
+
+        for i in range(len(target_list)):
+            targ = target_list[i]
+            # # ensures a unique filename
+            # filename = "target_" + str(i) + targ.get_shape() + targ.get_color() + ".jpg"
+            # cv2.imwrite(filename, targ.get_image())
+            
+            px, py = targ.get_pixel_pos()
+            image_width = 2560
+            image_height = 1440
+            
+            # Draw bbox around target on image, and include coordinates
+            targ_x, targ_y = pixel_to_loc(px, image_height - py, drone_x, drone_y, 20, image_height, image_width, H_fov=1.0472)
+            
+            # Add real coordinates to target
+            targ.set_real_pos(targ_x, targ_y)
+            
+            bb_color = (72, 250, 223)
+            x, y = targ.get_x(), targ.get_y()
+            cv2.rectangle(aerial_image, (x - 60, y - 60), (x + 60, y + 60), bb_color, 4)
+            
+            # print position
+            cv2.putText(aerial_image, 
+                        "x: {}, y: {}".format(targ_x, targ_y),
+                        (x + 65, y - 30),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        1,
+                        bb_color,
+                        2,
+                        cv2.LINE_AA)
+            
+            # print target color
+            cv2.putText(aerial_image, 
+                        "color: {}".format(targ.get_color()),
+                        (x + 65, y),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        1,
+                        bb_color,
+                        2,
+                        cv2.LINE_AA)
+            
+            # print target shape
+            cv2.putText(aerial_image, 
+                        "shape: {}".format(targ.get_shape()),
+                        (x + 65, y + 30),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        1,
+                        bb_color,
+                        2,
+                        cv2.LINE_AA)
+        
+        # save aerial image
+        filename = "aerial_image_processed_{}.jpg".format(index)
+        cv2.imwrite(filename, aerial_image)
+        
+        # ----------------------------------------------------------------
+        
+        global_target_list += target_list
+        
+    # save all individual targets
+    print(global_target_list)
+    print(len(global_target_list))
+    global_target_list = filter_targets(global_target_list)
+    for i in range(len(global_target_list)):
+        print(i)
+        target = global_target_list[i]
+        
+        filename = "res_filtered/" + target.get_shape() + "_" + target.get_color() + "_" + str(i) + ".jpg"
+        
+        cv2.imwrite(filename, target.get_image())
+        
+        
+        
+    
+    
